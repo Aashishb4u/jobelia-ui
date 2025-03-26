@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+
+<body class="font-montserrat bg-gray-100">
+    <!-- Navbar -->
+    <header>
+        <nav class="bg-white shadow-md p-6">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="text-xl font-bold text-green-600"><img class="inline mx-2 w-8 h-8"
+                        src="./assets/images/logo.png" alt="logo">Jobelia</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-green-600 text-lg font-semibold">Find Jobs</a>
+                    <a href="#" class="text-gray-800 text-lg">Find Talent</a>
+                    <a href="#" class="text-gray-800 text-lg">Upload Job</a>
+                    <a href="#" class="text-gray-800 text-lg">About Us</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <button class="relative focus:outline-none">
+                        <img src="./assets/images/bell.png" alt="Notifications" class="cursor-pointer w-8 h-8">
+                    </button>
+                    <img src="./assets/images/avatar.png" alt="User Avatar"
+                        class="w-10 h-10 cursor-pointer rounded-full">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative bg-gray-100 py-16 px-6 md:px-16 lg:px-24">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900">Find your dream job</h1>
+                <p class="text-gray-600 mt-2 text-lg">Looking for a job? Browse our latest job openings to view & apply
+                    to the best jobs today!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters & Job Listings -->
+    <section class="container mx-auto py-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Filter Sidebar -->
+            <aside class="bg-white p-4 shadow-md rounded-lg">
+                <div class="flex justify-between items-center border-b pb-2 mb-4">
+                    <h2 class="text-lg font-semibold">Filter</h2>
+                    <button class="text-red-500 text-sm font-medium">Clear all</button>
+                </div>
+
+                <!-- Date Post -->
+                <div class="mb-4">
+                    <label class="text-sm font-medium">Date Post</label>
+                    <select class="w-full p-2 border rounded mt-1">
+                        <option>Anytime</option>
+                    </select>
+                </div>
+
+                <!-- Job Type -->
+                <div class="mb-4">
+                    <label class="text-sm font-medium">Job type</label>
+                    <div class="flex flex-col space-y-1 mt-1">
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" class="form-checkbox text-green-500">
+                            <span>Full-time</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" class="form-checkbox text-green-500">
+                            <span>Freelance</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Range Salary -->
+                <div class="mb-4">
+                    <label class="text-sm font-medium">Range Salary</label>
+                    <div class="mt-2 space-y-2">
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="salary" class="form-radio text-green-500">
+                            <span>Under $1000</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="salary" class="form-radio text-green-500">
+                            <span>$1000 to $2500</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="salary" class="form-radio text-green-500">
+                            <span>$2500 to $5000</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="radio" name="salary" class="form-radio text-green-500">
+                            <span>Custom</span>
+                        </label>
+                        <div class="relative w-full">
+                            <input type="range" min="1000" max="5000" value="2500" class="w-full cursor-pointer"
+                                id="salaryRange" oninput="updateSalaryValue()">
+                            <div class="text-center text-xs mt-1" id="salaryValue">$2500</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Job Listings -->
+            <div class="md:col-span-3">
+                <div class="bg-white p-4 shadow-md rounded-lg">
+                    <h2 class="text-xl font-semibold mb-4">250 Jobs results</h2>
+
+                    <!-- Job Cards -->
+                    <div class="space-y-4">
+                        <!-- Job Item -->
+                        <div class="bg-white p-4  rounded-lg shadow-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <img src="./assets/images/product-designer.png" class="w-8 h-8">
+                                    <h3 class="text-lg font-semibold">Product Designer</h3>
+                                </div>
+                                <div class="text-gray-600 text-sm">Marina East, Singapore</div>
+                            </div>
+                            <p class="text-gray-600 mt-2">Gojek • <span
+                                    class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Full-time</span> •
+                                <span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs">Urgently hiring</span>
+                            </p>
+                            <p class="text-sm text-gray-500 mt-2">Within this role, you will be creating content for a
+                                wide range of local and international clients...</p>
+                        </div>
+
+                        <div class="bg-white p-4  rounded-lg shadow-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <img src="./assets/images/copywriter.png" class="w-8 h-8">
+                                    <h3 class="text-lg font-semibold">Copywriting Specialist</h3>
+                                </div>
+                                <div class="text-gray-600 text-sm">Paris, France</div>
+                            </div>
+                            <p class="text-gray-600 mt-2">Odama Studio • <span
+                                    class="bg-orange-100 text-orange-700 px-2 py-1 rounded text-xs">Freelance</span> •
+                                $1,800-$1,800 USD</p>
+                            <p class="text-sm text-gray-500 mt-2">Collaborate with the marketing team to optimize
+                                conversion...</p>
+                        </div>
+
+                        <div class="bg-white p-4  rounded-lg shadow-lg">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <img src="./assets/images/developer.png" class="w-8 h-8">
+                                    <h3 class="text-lg font-semibold">Full Stack Developer</h3>
+                                </div>
+                                <div class="text-gray-600 text-sm">Málaga, Spain</div>
+                            </div>
+                            <p class="text-gray-600 mt-2">Twitter • <span
+                                    class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">Full-time</span> •
+                                $100-$2,000 USD</p>
+                            <p class="text-sm text-gray-500 mt-2">Responsible for designing, planning, and testing of
+                                any projects/products...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function updateSalaryValue() {
+            document.getElementById('salaryValue').innerText = '$' + document.getElementById('salaryRange').value;
+        }
+    </script>
+
+</body>
+
+</html>
