@@ -29,12 +29,12 @@
                     <img src="./assets/images/avatar.png" alt="User Avatar"
                         class="w-10 h-10 cursor-pointer rounded-full">
                 </div>
-            </div>
+            </div> 
         </nav>
     </header>
     <!-- Hero Section -->
-    <section class="relative py-24">
-        <div class="absolute inset-y-0 m-6 right-0 w-1/2 bg-[url('/assets/images/abstract.png')] bg-cover bg-no-repeat"></div>
+    <section class="bg-[#F5F9FC] relative py-24">
+        <div class="mix-blend-multiply absolute inset-y-0 right-0 w-1/2 bg-[url('/assets/images/abstract.png')] bg-cover bg-no-repeat"></div>
         <div class="relative container mx-auto p-6 text-start">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Find your dream job</h1>
             <p class="text-gray-600 mt-4">Looking for a job? Browse our latest job openings to view & apply to the best jobs today!</p>
@@ -85,6 +85,8 @@
                 <!-- Range Salary -->
                 <div class="mb-4">
                     <label class="text-base font-medium">Range Salary</label>
+
+                    
                     <div class="mt-4 space-y-2">
                         <label class="flex items-center space-x-2">
                             <input type="radio" name="salary" class="form-radio text-green-500">
@@ -108,6 +110,117 @@
                         </div>
                     </div>
                 </div>
+
+                <style>
+                    /* Hide default range styling */
+                    input[type="range"] {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 100%;
+                        position: absolute;
+                        background: transparent;
+                        pointer-events: none;
+                        z-index: 2;
+                    }
+            
+                    /* Custom track (hidden default) */
+                    input[type="range"]::-webkit-slider-runnable-track {
+                        height: 2px;
+                    }
+            
+                    /* Custom thumb styling (Centered) */
+                    input[type="range"]::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 18px;
+                        height: 18px;
+                        background: white;
+                        border: 3px solid #23a9f7;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        pointer-events: auto;
+                        position: relative;
+                        z-index: 3;
+                        transform: translateY(-30%);
+                    }
+            
+                    input[type="range"]::-moz-range-thumb {
+                        width: 18px;
+                        height: 18px;
+                        background: white;
+                        border: 3px solid #23a9f7;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        pointer-events: auto;
+                        z-index: 3;
+                        transform: translateY(-30%);
+                    }
+            
+                    /* Centering the range input itself */
+                    .slider-container {
+                        position: relative;
+                        height: 18px; /* Adjust height to fit thumb */
+                    }
+                </style>
+            </head>
+            <body class="flex justify-center items-center min-h-screen bg-gray-100">
+                <div class="w-[400px] bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-lg font-bold">PRICE RANGE</h2>
+                    
+                    <div class="relative mt-4 slider-container">
+                        <!-- Custom Range Inputs -->
+                        <input type="range" id="minRange" min="0" max="400" value="0">
+                        <input type="range" id="maxRange" min="0" max="400" value="400">
+                        
+                        <!-- Custom Track -->
+                        <div class="relative w-full h-2 bg-gray-200 rounded-md">
+                            <div id="rangeTrack" class="absolute h-2 bg-gradient-to-r from-blue-900 to-blue-400 rounded-md"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-3 text-gray-600">
+                        <span>Min Price: $<span id="minValue">0</span></span>
+                        <span>Max Price: $<span id="maxValue">400</span></span>
+                    </div>
+                </div>
+                
+                <script>
+                    const minRange = document.getElementById("minRange");
+                    const maxRange = document.getElementById("maxRange");
+                    const minValue = document.getElementById("minValue");
+                    const maxValue = document.getElementById("maxValue");
+                    const rangeTrack = document.getElementById("rangeTrack");
+                    const minGap = 10;
+            
+                    function updateRange() {
+                        let min = parseInt(minRange.value);
+                        let max = parseInt(maxRange.value);
+            
+                        // Ensure min & max have a gap of at least `minGap`
+                        if (max - min < minGap) {
+                            if (event.target === minRange) {
+                                minRange.value = max - minGap;
+                            } else {
+                                maxRange.value = min + minGap;
+                            }
+                        }
+            
+                        minValue.innerText = minRange.value;
+                        maxValue.innerText = maxRange.value;
+            
+                        let minPercent = (minRange.value / 400) * 100;
+                        let maxPercent = (maxRange.value / 400) * 100;
+                        rangeTrack.style.left = minPercent + "%";
+                        rangeTrack.style.right = 100 - maxPercent + "%";
+                    }
+            
+                    // Event listeners for input changes
+                    minRange.addEventListener("input", updateRange);
+                    maxRange.addEventListener("input", updateRange);
+            
+                    updateRange(); // Initialize the UI on load
+                </script>
+            </body>
             </aside>
     
             <!-- Job Listings -->
