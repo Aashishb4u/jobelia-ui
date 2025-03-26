@@ -14,13 +14,26 @@
     <header>
         <nav class="bg-gray-100 shadow-md p-6">
             <div class="container mx-auto flex justify-between items-center">
-                <div class="text-xl font-bold text-green-600"><img class="inline mx-2 w-8 h-8"
-                        src="./assets/images/logo.png" alt="logo">Jobelia</div>
+                <div class="text-xl font-bold text-green-600">
+                    <img class="inline mx-2 w-8 h-8" src="./assets/images/logo.png" alt="logo">Jobelia
+                </div>
                 <div class="hidden md:flex space-x-6">
-                    <a href="#" class="text-green-600 text-lg font-semibold">Find Jobs</a>
-                    <a href="#" class="text-gray-800 text-lg">Find Talent</a>
-                    <a href="#" class="text-gray-800 text-lg">Upload Job</a>
-                    <a href="#" class="text-gray-800 text-lg">About Us</a>
+                    <a href="#" class="relative text-green-600 text-lg font-semibold group">
+                        Find Jobs
+                        <span class="absolute left-0 bottom-0 translate-y-4 w-full h-0.5 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#" class="relative text-gray-800 text-lg group">
+                        Find Talent
+                        <span class="absolute left-0 bottom-0 translate-y-4 w-full h-0.5 bg-gray-800 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#" class="relative text-gray-800 text-lg group">
+                        Upload Job
+                        <span class="absolute left-0 bottom-0 translate-y-4 w-full h-0.5 bg-gray-800 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#" class="relative text-gray-800 text-lg group">
+                        About Us
+                        <span class="absolute left-0 bottom-0 translate-y-4 w-full h-0.5 bg-gray-800 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
                 </div>
                 <div class="flex items-center space-x-6">
                     <button class="relative focus:outline-none">
@@ -29,18 +42,22 @@
                     <img src="./assets/images/avatar.png" alt="User Avatar"
                         class="w-10 h-10 cursor-pointer rounded-full">
                 </div>
-            </div> 
+            </div>
         </nav>
     </header>
+    
     <!-- Hero Section -->
     <section class="bg-[#F5F9FC] relative py-24">
-        <div class="mix-blend-multiply absolute inset-y-0 right-0 w-1/2 bg-[url('/assets/images/abstract.png')] bg-cover bg-no-repeat"></div>
+        <div
+            class="mix-blend-multiply absolute inset-y-0 right-0 w-1/2 bg-[url('/assets/images/abstract.png')] bg-cover bg-no-repeat">
+        </div>
         <div class="relative container mx-auto p-6 text-start">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Find your dream job</h1>
-            <p class="text-gray-600 mt-4">Looking for a job? Browse our latest job openings to view & apply to the best jobs today!</p>
+            <p class="text-gray-600 mt-4">Looking for a job? Browse our latest job openings to view & apply to the best
+                jobs today!</p>
         </div>
     </section>
-    
+
     <!-- Filters & Job Listings -->
     <section class="container mx-auto py-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -50,7 +67,7 @@
                     <h2 class="text-lg font-semibold">Filter</h2>
                     <button class="text-red-500 text-base font-medium">Clear all</button>
                 </div>
-    
+
                 <!-- Date Post -->
                 <div class="mb-4 border-b border-gray-300">
                     <label class="text-base font-medium">Date Post</label>
@@ -58,7 +75,7 @@
                         <option>Anytime</option>
                     </select>
                 </div>
-    
+
                 <!-- Job Type -->
                 <div class="mb-4 border-b border-gray-300">
                     <label class="text-base font-medium">Job type</label>
@@ -81,12 +98,12 @@
                         </label>
                     </div>
                 </div>
-    
+
                 <!-- Range Salary -->
                 <div class="mb-4">
                     <label class="text-base font-medium">Range Salary</label>
 
-                    
+
                     <div class="mt-4 space-y-2">
                         <label class="flex items-center space-x-2">
                             <input type="radio" name="salary" class="form-radio text-green-500">
@@ -104,10 +121,6 @@
                             <input type="radio" name="salary" class="form-radio text-green-500">
                             <span>Custom</span>
                         </label>
-                        <div class="relative w-full">
-                            <input type="range" min="1000" max="5000" value="2500" class="w-full cursor-pointer" id="salaryRange" oninput="updateSalaryValue()">
-                            <div class="text-center text-base mt-1" id="salaryValue">$2500</div>
-                        </div>
                     </div>
                 </div>
 
@@ -122,12 +135,12 @@
                         pointer-events: none;
                         z-index: 2;
                     }
-            
+
                     /* Custom track (hidden default) */
                     input[type="range"]::-webkit-slider-runnable-track {
                         height: 2px;
                     }
-            
+
                     /* Custom thumb styling (Centered) */
                     input[type="range"]::-webkit-slider-thumb {
                         -webkit-appearance: none;
@@ -143,7 +156,7 @@
                         z-index: 3;
                         transform: translateY(-30%);
                     }
-            
+
                     input[type="range"]::-moz-range-thumb {
                         width: 18px;
                         height: 18px;
@@ -155,74 +168,77 @@
                         z-index: 3;
                         transform: translateY(-30%);
                     }
-            
+
                     /* Centering the range input itself */
                     .slider-container {
                         position: relative;
-                        height: 18px; /* Adjust height to fit thumb */
+                        height: 18px;
+                        /* Adjust height to fit thumb */
                     }
                 </style>
-            </head>
-            <body class="flex justify-center items-center min-h-screen bg-gray-100">
-                <div class="w-[400px] bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-lg font-bold">PRICE RANGE</h2>
-                    
-                    <div class="relative mt-4 slider-container">
-                        <!-- Custom Range Inputs -->
-                        <input type="range" id="minRange" min="0" max="400" value="0">
-                        <input type="range" id="maxRange" min="0" max="400" value="400">
-                        
-                        <!-- Custom Track -->
-                        <div class="relative w-full h-2 bg-gray-200 rounded-md">
-                            <div id="rangeTrack" class="absolute h-2 bg-gradient-to-r from-blue-900 to-blue-400 rounded-md"></div>
+                </head>
+
+                <body class="flex justify-center items-center min-h-screen bg-gray-100">
+                    <div class=" bg-white">
+                        <h2 class="text-base font-bold">PRICE RANGE</h2>
+
+                        <div class="relative mt-4 slider-container">
+                            <!-- Custom Range Inputs -->
+                            <input type="range" id="minRange" min="0" max="400" value="0">
+                            <input type="range" id="maxRange" min="0" max="400" value="400">
+
+                            <!-- Custom Track -->
+                            <div class="relative w-full h-2 bg-gray-200 rounded-md">
+                                <div id="rangeTrack"
+                                    class="absolute h-2 bg-gradient-to-r from-blue-900 to-blue-400 rounded-md"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between mt-3 text-gray-600">
+                            <span>Min Price: $<span id="minValue">0</span></span>
+                            <span>Max Price: $<span id="maxValue">400</span></span>
                         </div>
                     </div>
-                    
-                    <div class="flex justify-between mt-3 text-gray-600">
-                        <span>Min Price: $<span id="minValue">0</span></span>
-                        <span>Max Price: $<span id="maxValue">400</span></span>
-                    </div>
-                </div>
-                
-                <script>
-                    const minRange = document.getElementById("minRange");
-                    const maxRange = document.getElementById("maxRange");
-                    const minValue = document.getElementById("minValue");
-                    const maxValue = document.getElementById("maxValue");
-                    const rangeTrack = document.getElementById("rangeTrack");
-                    const minGap = 10;
-            
-                    function updateRange() {
-                        let min = parseInt(minRange.value);
-                        let max = parseInt(maxRange.value);
-            
-                        // Ensure min & max have a gap of at least `minGap`
-                        if (max - min < minGap) {
-                            if (event.target === minRange) {
-                                minRange.value = max - minGap;
-                            } else {
-                                maxRange.value = min + minGap;
+
+                    <script>
+                        const minRange = document.getElementById("minRange");
+                        const maxRange = document.getElementById("maxRange");
+                        const minValue = document.getElementById("minValue");
+                        const maxValue = document.getElementById("maxValue");
+                        const rangeTrack = document.getElementById("rangeTrack");
+                        const minGap = 10;
+
+                        function updateRange() {
+                            let min = parseInt(minRange.value);
+                            let max = parseInt(maxRange.value);
+
+                            // Ensure min & max have a gap of at least `minGap`
+                            if (max - min < minGap) {
+                                if (event.target === minRange) {
+                                    minRange.value = max - minGap;
+                                } else {
+                                    maxRange.value = min + minGap;
+                                }
                             }
+
+                            minValue.innerText = minRange.value;
+                            maxValue.innerText = maxRange.value;
+
+                            let minPercent = (minRange.value / 400) * 100;
+                            let maxPercent = (maxRange.value / 400) * 100;
+                            rangeTrack.style.left = minPercent + "%";
+                            rangeTrack.style.right = 100 - maxPercent + "%";
                         }
-            
-                        minValue.innerText = minRange.value;
-                        maxValue.innerText = maxRange.value;
-            
-                        let minPercent = (minRange.value / 400) * 100;
-                        let maxPercent = (maxRange.value / 400) * 100;
-                        rangeTrack.style.left = minPercent + "%";
-                        rangeTrack.style.right = 100 - maxPercent + "%";
-                    }
-            
-                    // Event listeners for input changes
-                    minRange.addEventListener("input", updateRange);
-                    maxRange.addEventListener("input", updateRange);
-            
-                    updateRange(); // Initialize the UI on load
-                </script>
-            </body>
+
+                        // Event listeners for input changes
+                        minRange.addEventListener("input", updateRange);
+                        maxRange.addEventListener("input", updateRange);
+
+                        updateRange(); // Initialize the UI on load
+                    </script>
+                </body>
             </aside>
-    
+
             <!-- Job Listings -->
             <div class="md:col-span-3">
                 <div class="bg-white p-4 rounded-lg">
@@ -231,9 +247,10 @@
                         <!-- Job Title Input with Icon -->
                         <div class="flex items-center border border-gray-300 rounded w-full p-2">
                             <img class="w-5 h-5 ml-2" src="./assets/images/search.png" alt="Search">
-                            <input type="text" class="w-full p-2 focus:outline-none" placeholder="Search job title or keyword">
+                            <input type="text" class="w-full p-2 focus:outline-none"
+                                placeholder="Search job title or keyword">
                         </div>
-                    
+
                         <!-- Country/Timezone Input with Find Jobs Button -->
                         <div class="flex items-center border border-gray-300 rounded w-full p-2">
                             <img class="w-5 h-5 ml-2" src="./assets/images/location.png" alt="Search">
@@ -243,9 +260,9 @@
                             </button>
                         </div>
                     </div>
-                    
+
                     <h2 class="text-xl font-semibold mb-8">250 Jobs results</h2>
-    
+
                     <!-- Job Cards -->
                     <div class="space-y-8 mt-4">
                         <!-- Job Item -->
@@ -253,116 +270,116 @@
                             <!-- Job Title & Company -->
                             <div class="flex items-start space-x-3">
                                 <!-- Company Logo -->
-                                <img src="./assets/images/logo.png" alt="Gojek Logo" class="w-12 h-12">
-                                
+                                <img src="./assets/images/logo.png" alt="Gojek Logo" class="w-14 h-14">
+
                                 <div class="w-full">
                                     <!-- Job Title -->
                                     <h3 class="text-lg font-semibold">Product Designer</h3>
                                     <!-- Company & Tags -->
-                                    <div class="flex  items-center space-x-2 text-gray-500 text-base">
-                                        <span>Gojek •</span>
-                                        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-xl text-base">Full-time</span> •
-                                        <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded-xl text-base">Urgently hiring</span>
+                                    <div class="flex justify-between items-center space-x-2 text-gray-500 text-base">
+                                        <div><span>Gojek •</span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-xl text-base">Full-time</span>
+                                        •
+                                        <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded-xl text-base">Urgently
+                                            hiring</span></div>
+                                            <!-- location -->
+                                        <div class="flex flex-col text-center">
+                                        <span class="text-black text-base"><img src="./assets/images/black-location.png" alt="Location Icon"
+                                            class="w-6 h-6 inline"> Marina East, Singapore</span>
+                                        <span class="text-gray-400 text-base">Posted 5 mins ago</span></div>
                                     </div>
-                        
+                                    
                                     <!-- Job Description -->
-                                    <ul class="list-disc text-gray-600 text-base mt-4 space-y-1">
-                                        <li>Within this role, you will be creating content for a wide range of local and international clients</li>
+                                    <ul class="list-disc text-gray-600 text-base mt-4 space-y-1 flex flex-col">
+                                        <li>Within this role, you will be creating content for a wide range of local and
+                                            international clients</li>
                                         <li>This role is suited to Bali based creatives looking to work in-house.</li>
                                     </ul>
                                 </div>
-                        
-                                <!-- Location -->
-                                <div class="flex flex-col items-end text-gray-500 text-sm">
-                                    <div class="flex items-center space-x-1">
-                                        <img src="./assets/images/black-location.png" alt="Location Icon" class="w-6 h-6">
-                                        <span class="text-black text-base">Marina East, Singapore</span>
-                                    </div>
-                                    <span class="text-gray-400 text-base">Posted 5 mins ago</span>
-                                </div>
                             </div>
                         </div>
-                        
+
                         <div class="bg-white p-4 rounded-lg border border-gray-300 hover:shadow-lg w-full">
                             <!-- Job Title & Company -->
                             <div class="flex items-start space-x-3">
                                 <!-- Company Logo -->
-                                <img src="./assets/images/logo.png" alt="Gojek Logo" class="w-12 h-12">
-                                
+                                <img src="./assets/images/logo.png" alt="Gojek Logo" class="w-14 h-14">
+
                                 <div class="w-full">
                                     <!-- Job Title -->
-                                    <h3 class="text-lg font-semibold">Copywriting Specialist</h3>
+                                    <h3 class="text-lg font-semibold">Product Designer</h3>
                                     <!-- Company & Tags -->
-                                    <div class="flex  items-center space-x-2 text-gray-500 text-base">
-                                        <span>Odama Studio • </span>
-                                        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-xl text-base">Freelance</span>
-                                        <span class=" text-gray-500 px-2 py-1 rounded-xl text-base"> • $1,800-$1,800 USD</span>
+                                    <div class="flex justify-between items-center space-x-2 text-gray-500 text-base">
+                                        <div><span>Gojek •</span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-xl text-base">Full-time</span>
+                                        •
+                                        <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded-xl text-base">Urgently
+                                            hiring</span></div>
+                                            <!-- location -->
+                                        <div class="flex flex-col text-center">
+                                        <span class="text-black text-base"><img src="./assets/images/black-location.png" alt="Location Icon"
+                                            class="w-6 h-6 inline"> Marina East, Singapore</span>
+                                        <span class="text-gray-400 text-base">Posted 5 mins ago</span></div>
                                     </div>
-                        
+                                    
                                     <!-- Job Description -->
-                                    <ul class="list-disc text-gray-600 text-base mt-4 space-y-1">
-                                        <li>Within this role, you will be creating content for a wide range of local and international clients</li>
+                                    <ul class="list-disc text-gray-600 text-base mt-4 space-y-1 flex flex-col">
+                                        <li>Within this role, you will be creating content for a wide range of local and
+                                            international clients</li>
                                         <li>This role is suited to Bali based creatives looking to work in-house.</li>
                                     </ul>
                                 </div>
-                        
-                                <!-- Location -->
-                                <div class="flex flex-col items-end text-gray-500 text-sm">
-                                    <div class="flex items-center space-x-1">
-                                        <img src="./assets/images/black-location.png" alt="Location Icon" class="w-6 h-6">
-                                        <span class="text-black text-base">Paris, France</span>
-                                    </div>
-                                    <span class="text-gray-400 text-base">Posted 5 mins ago</span>
-                                </div>
                             </div>
                         </div>
-                        
+
                         <div class="bg-white p-4 rounded-lg border border-gray-300 hover:shadow-lg w-full">
                             <!-- Job Title & Company -->
                             <div class="flex items-start space-x-3">
                                 <!-- Company Logo -->
-                                <img src="./assets/images/logo.png" alt="Gojek Logo" class="w-12 h-12">
-                                
+                                <img src="./assets/images/logo.png" alt="Gojek Logo" class="w-14 h-14">
+
                                 <div class="w-full">
                                     <!-- Job Title -->
-                                    <h3 class="text-lg font-semibold">Copywriting Specialist</h3>
+                                    <h3 class="text-lg font-semibold">Product Designer</h3>
                                     <!-- Company & Tags -->
-                                    <div class="flex  items-center space-x-2 text-gray-500 text-base">
-                                        <span>Odama Studio • </span>
-                                        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-xl text-base">Freelance</span>
-                                        <span class=" text-gray-500 px-2 py-1 rounded-xl text-base"> • $1,800-$1,800 USD</span>
+                                    <div class="flex justify-between items-center space-x-2 text-gray-500 text-base">
+                                        <div><span>Gojek •</span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-xl text-base">Full-time</span>
+                                        •
+                                        <span class="bg-pink-100 text-pink-700 px-2 py-1 rounded-xl text-base">Urgently
+                                            hiring</span></div>
+                                            <!-- location -->
+                                        <div class="flex flex-col text-center">
+                                        <span class="text-black text-base"><img src="./assets/images/black-location.png" alt="Location Icon"
+                                            class="w-6 h-6 inline"> Marina East, Singapore</span>
+                                        <span class="text-gray-400 text-base">Posted 5 mins ago</span></div>
                                     </div>
-                        
+                                    
                                     <!-- Job Description -->
-                                    <ul class="list-disc text-gray-600 text-base mt-4 space-y-1">
-                                        <li>Within this role, you will be creating content for a wide range of local and international clients</li>
+                                    <ul class="list-disc text-gray-600 text-base mt-4 space-y-1 flex flex-col">
+                                        <li>Within this role, you will be creating content for a wide range of local and
+                                            international clients</li>
                                         <li>This role is suited to Bali based creatives looking to work in-house.</li>
                                     </ul>
                                 </div>
-                        
-                                <!-- Location -->
-                                <div class="flex flex-col items-end text-gray-500 text-sm">
-                                    <div class="flex items-center space-x-1">
-                                        <img src="./assets/images/black-location.png" alt="Location Icon" class="w-6 h-6">
-                                        <span class="text-black text-base">Paris, France</span>
-                                    </div>
-                                    <span class="text-gray-400 text-base">Posted 5 mins ago</span>
-                                </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <script>
         function updateSalaryValue() {
             document.getElementById('salaryValue').innerText = '$' + document.getElementById('salaryRange').value;
         }
     </script>
-    
+
 </body>
 
 </html>
